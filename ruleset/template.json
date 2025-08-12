@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "rules": [
+    { "domain_suffix": ["baidu.com", "qq.com", "bilibili.com"] },
+    { "domain_keyword": ["aliyun", "cnblogs"] },
+    { "ip_cidr": ["1.1.1.1/32", "8.8.8.0/24"] }
+  ]
+}

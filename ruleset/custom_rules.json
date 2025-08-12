@@ -1,0 +1,9 @@
+
+{
+  "version": 3,
+  "rules": [
+    {"process_name": ["tradingview"]},
+    { "domain_suffix": ["tradingview.com"] },
+    { "domain_keyword": ["tradingview"] }
+  ]
+}
