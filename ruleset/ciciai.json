@@ -1,0 +1,43 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix":[
+        "vcs-sg.byteoversea.com",
+        "vmweb-va.ciciai.com",
+        "mcs-va.ciciai.com",
+        "lf-rc1.yhgfb-static.com",
+        "itobsnssdk.com",
+        "ciciaicdn.com",
+        "abtestvm-sg.bytedance.com",
+        "starling-oversea.byteoversea.com",
+        "sf16-tcc-tos-sg.byteoversea.com",
+        "bytedapm.com",
+        "byteintl.net",
+        "trae.ai",
+        "bytednsdoc.com",
+        "mchost.guru",
+        "marscode.com",
+        "zijieapi.com",
+        "api.marscode.com",
+        "api-sg-central.marscode.com",
+        "mon-va.byteoversea.com",
+        "sgali-mcs.byteoversea.com",
+        "maliva-mcs.byteoversea.com",
+        "mcs.zijieapi.com",
+        "mon.zijieapi.com",
+        "lf-cdn.marscode.com",
+        "abtestvm.bytedance.com",
+        "ulikecam.com",
+        "capcut.com",
+        "capcutapi.com",
+        "lemon8cdn.com",
+        "lemon8-app.com",
+        "ttwstatic.com",
+        "ibyteimg.com",
+        "snapkit.com",
+        "pangle.io"
+      ]
+    }
+  ]
+}
