@@ -80,8 +80,8 @@
       {"rule_set": "geoip-cn", "outbound": "直连"}
     ],
     "rule_set": [
-      {"tag": "custom", "type": "remote", "format": "json", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/PLKwan/rules-lab/refs/heads/dev/ruleset/custom_rules.json", "download_detour": "直连"},
-      {"tag": "ciciai", "type": "remote", "format": "json", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/PLKwan/rules-lab/refs/heads/dev/ruleset/ciciai.json", "download_detour": "直连"},
+      {"tag": "custom", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/PLKwan/rules-lab/refs/heads/dev/ruleset/custom_rules.list", "download_detour": "直连"},
+      {"tag": "ciciai", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/PLKwan/rules-lab/refs/heads/dev/ruleset/ciciai.list", "download_detour": "直连"},
       {"tag": "geosite-okx", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/okx.srs", "download_detour": "直连"},
       {"tag": "geosite-crypto", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-cryptocurrency.srs", "download_detour": "直连"},
       {"tag": "geosite-ads", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs", "download_detour": "直连"},
