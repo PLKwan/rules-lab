@@ -3,19 +3,20 @@
     "servers": [
       {"tag": "local", "type": "udp", "server": "223.5.5.5"},
       {"tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
-      {"tag": "foreign", "type": "https", "server": "dns.google", "domain_resolver": "local"},
+      {"tag": "foreign", "type": "https", "server": "8.8.8.8", "detour": "默认代理"},
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
     "rules": [
-      {"query_type": "HTTPS", "action": "reject"},
       {"clash_mode": "direct", "server": "local"},
-      {"clash_mode": "global", "server": "foreign"},
+      {"clash_mode": "global", "server": "fakeip"},
+      {"query_type": "HTTPS", "action": "reject"},
       {"rule_set": ["geosite-cn", "geosite-apple"], "server": "local"},
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
     "final": "foreign",
     "strategy": "ipv4_only",
-    "independent_cache": true
+    "independent_cache": true,
+    "reverse_mapping": true
   },
   "outbounds": [
     {"tag": "默认代理", "type": "selector", "outbounds": ["HK手动", "JP手动", "SG手动", "TW手动", "US手动", "节点选择", "自动选择"]},
@@ -36,13 +37,13 @@
     {"tag": "Microsoft", "type": "selector", "outbounds": ["直连", "HK手动", "TW手动", "JP手动", "SG手动", "US手动", "节点选择"]},
     {"tag": "Apple", "type": "selector", "outbounds": ["直连", "HK手动", "TW手动", "JP手动", "SG手动", "US手动", "节点选择"]},
     {"tag": "漏网之鱼", "type": "selector", "outbounds": ["直连", "默认代理", "HK手动", "TW手动", "JP手动", "SG手动", "US手动", "节点选择"]},
-    {"tag": "HK手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["HK|香港|港|HongKong"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "JP手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["JP|jp|日本|日|Japan"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "TW手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["台湾|TW"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "SG手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["新加坡|狮城|SG|Singapore"]}, {"action": "exclude", "keywords": ["免费"]}]},
-    {"tag": "US手动", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["US|美国|美|United States"]}, {"action": "exclude", "keywords": ["AUS|RUS|免费"]}]},
-    {"tag": "节点选择", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date"]}]},
-    {"tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["官网|到期时间|剩余|流量|套餐|免费|订阅|全球直连|GB|Expire Date|Traffic|ExpireDate"]}], "interval": "10m", "tolerance": 100},
+    {"tag": "HK手动", "type": "selector", "outbounds": []},
+    {"tag": "JP手动", "type": "selector", "outbounds": []},
+    {"tag": "TW手动", "type": "selector", "outbounds": []},
+    {"tag": "SG手动", "type": "selector", "outbounds": []},
+    {"tag": "US手动", "type": "selector", "outbounds": []},
+    {"tag": "节点选择", "type": "selector", "outbounds": []},
+    {"tag": "自动选择", "type": "urltest", "outbounds": []},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["默认代理", "AI-!cn", "ciciAI", "Crypto", "Gemini", "Custom", "YouTube", "Google", "Github", "Telegram", "TikTok", "Netflix", "PayPal", "Porn", "Microsoft", "Apple", "漏网之鱼", "HK手动", "JP手动", "SG手动", "US手动", "节点选择", "自动选择", "直连"]},
     {"tag": "直连", "type": "direct"},
     {"tag": "拒绝","type": "block"}
@@ -161,8 +162,8 @@
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/momo/run/ui",
       "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "直连",
-      "secret": "123456",
+      "external_ui_download_detour": "🎯 全球直连",
+      "secret": "",
       "default_mode": "rule"
     }
   },
