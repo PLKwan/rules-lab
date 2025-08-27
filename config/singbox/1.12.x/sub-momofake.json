@@ -28,7 +28,7 @@
     {"tag": "Google", "type": "selector", "outbounds": ["HK手动", "JP手动", "TW手动", "SG手动", "US手动", "节点选择"]},
     {"tag": "Gemini", "type": "selector", "outbounds": ["HK手动", "JP手动", "TW手动", "SG手动", "US手动", "节点选择"]},
     {"tag": "Custom", "type": "selector", "outbounds": ["HK手动", "JP手动", "TW手动", "SG手动", "US手动", "节点选择"]},
-    {"tag": "Github", "type": "selector", "outbounds": ["HK手动", "JP手动", "TW手动", "SG手动", "US手动", "节点选择"]},
+    {"tag": "Github", "type": "selector", "outbounds": ["直连", "HK手动", "JP手动", "TW手动", "SG手动", "US手动", "节点选择"]},
     {"tag": "Telegram", "type": "selector", "outbounds": ["HK手动", "JP手动", "TW手动", "SG手动", "US手动", "节点选择"]},
     {"tag": "TikTok", "type": "selector", "outbounds": ["HK手动", "JP手动", "TW手动", "SG手动", "US手动", "节点选择"]},
     {"tag": "Netflix", "type": "selector", "outbounds": ["HK手动", "JP手动", "TW手动", "SG手动", "US手动", "节点选择"]},
