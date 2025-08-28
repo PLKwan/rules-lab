@@ -13,10 +13,8 @@
         "servers": [
           "ovh-google-proxy",
           "ovh-cf-proxy",
-          "ovh-quad9-proxy",
           "ovh-google-direct",
-          "ovh-cf-direct",
-          "ovh-quad9-direct"
+          "ovh-cf-direct"
         ],
         "strategy": "prefer_ipv4",
         "lazy": true
