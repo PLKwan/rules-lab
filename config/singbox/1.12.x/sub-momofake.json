@@ -1,5 +1,5 @@
 {
- "dns": {
+  "dns": {
     "servers": [
       { "tag": "local", "type": "udp", "server": "223.5.5.5" },
       { "tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "system" },
@@ -13,12 +13,29 @@
         "servers": [
           "ovh-google-proxy",
           "ovh-cf-proxy",
+          "ovh-quad9-proxy",
           "ovh-google-direct",
-          "ovh-cf-direct"
+          "ovh-cf-direct",
+          "ovh-quad9-direct"
         ],
         "strategy": "prefer_ipv4",
         "lazy": true
-  },    
+      },
+      { "tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18" }
+    ],
+    "rules": [
+      { "query_type": "HTTPS", "action": "reject" },
+      { "clash_mode": "direct", "server": "local" },
+      { "clash_mode": "global", "server": "fakeip" },
+      { "rule_set": ["geosite-cn", "geosite-apple"], "server": "local" },
+      { "query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1 }
+    ],
+    "final": "foreign-group",
+    "strategy": "ipv4_only",
+    "independent_cache": true,
+    "reverse_mapping": true
+  },
+   
   "outbounds": [
     {"tag": "默认代理", "type": "selector", "outbounds": ["HK手动", "JP手动", "SG手动", "TW手动", "US手动", "节点选择", "自动选择"]},
     {"tag": "AI-!cn", "type": "selector", "outbounds": ["HK手动", "JP手动", "TW手动", "SG手动", "US手动", "节点选择"]},
